@@ -30,8 +30,19 @@ export default (options: Options) => {
           },
         },
         {
-          test: /\.(sc|c)ss$/,
-          use: [MiniCssExtractPlugin.loader, 'css-loader'],
+          test: /\.css$/,
+          use: [
+            MiniCssExtractPlugin.loader,
+            'css-loader',
+          ],
+        },
+        {
+          test: /\.scss$/,
+          use: [
+            'style-loader',
+            'css-loader',
+            'sass-loader',
+          ],
         },
       ]
     },
